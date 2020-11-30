@@ -75,12 +75,12 @@ def get_iso3(country_name,print_failure=True):
         return name2iso3[country_name]
     
     
-def save_comps(filename,comment=None,sheet_name=sheet_name):
+def save_comps(filename,comment=None,sheet_name="Sheet1"):
     from openpyxl import load_workbook
     with pd.ExcelWriter(filename, engine="xlsxwriter") as writer:
         if comment is not None:
             startrow = 1
-	    w.write_string(0,1,comment)
+            w.write_string(0,1,comment)
         else:
             startrow = 0
 
